@@ -43,7 +43,7 @@ const initialState: covidState = {
     },
     lastUpdate: "2021-02-01T06:22:27.000Z",
   },
-  country: "japan",
+  country: "",
   dailyData: [
     {
       confirmed: {
@@ -53,6 +53,78 @@ const initialState: covidState = {
         total: 17,
       },
       reportDate: "2020-01-22",
+    },
+    {
+      confirmed: {
+        total: 84121,
+      },
+      deaths: {
+        total: 2873,
+      },
+      reportDate: "2020-02-28",
+    },
+    {
+      confirmed: {
+        total: 799018,
+      },
+      deaths: {
+        total: 39620,
+      },
+      reportDate: "2020-03-30",
+    },
+    {
+      confirmed: {
+        total: 3274139,
+      },
+      deaths: {
+        total: 236559,
+      },
+      reportDate: "2020-04-30",
+    },
+    {
+      confirmed: {
+        total: 6078261,
+      },
+      deaths: {
+        total: 371610,
+      },
+      reportDate: "2020-05-30",
+    },
+    {
+      confirmed: {
+        total: 10447289,
+      },
+      deaths: {
+        total: 508361,
+      },
+      reportDate: "2020-06-30",
+    },
+    {
+      confirmed: {
+        total: 17304066,
+      },
+      deaths: {
+        total: 669124,
+      },
+      reportDate: "2020-07-30",
+    },
+    {
+      confirmed: {
+        total: 25220408,
+      },
+      deaths: {
+        total: 846353,
+      },
+      reportDate: "2020-08-30",
+    },
+    {
+      confirmed: {
+        total: 33968093,
+      },
+      deaths: {
+        total: 1014161,
+      },
+      reportDate: "2020-09-30",
     },
   ],
 };
@@ -66,7 +138,7 @@ export const fetchAsyncGetDaily = createAsyncThunk(
   "covid/getDaily",
   async () => {
     const { data } = await axios.get<APIDATADAILY>(
-      "https://covid19-api-udemy.herokuapp.com/api/daily/"
+      "https://covid19-api-udemy.herokuapp.com/api/daily"
     );
     return data;
   }
